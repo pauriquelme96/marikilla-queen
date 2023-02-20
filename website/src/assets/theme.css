@@ -1,0 +1,334 @@
+/* ---------------------------
+VARIABLES
+--------------------------- */
+:root {
+  --primary-color: #21396D;
+  --secondary-color: white;
+  --accent-color: #FBC045;
+  --primary-font: 'Raleway';
+  --secondary-font: 'Baloo 2';
+}
+
+/* -------------------------------
+SPACING
+------------------------------- */
+.page-container {
+  max-width: 1300px;
+  padding: 40px;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .page-container {
+    padding: 20px;
+  }
+}
+
+.small-page-container {
+  max-width: 1000px;
+  padding: 40px;
+  margin: auto;
+}
+
+.page {
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+/* -------------------------------
+COLORS
+------------------------------- */
+.c-primary {
+  color: var(--primary-color);
+}
+
+.c-secondary {
+  color: var(--secondary-color);
+}
+
+.c-accent {
+  color: var(--accent-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+.c-white {
+  color: white;
+}
+
+.c-black {
+  color: rgb(20, 20, 20);
+}
+
+.bg-black {
+  background-color: rgb(23, 23, 23);
+}
+
+.bg-gray {
+  background-color: gray;
+}
+
+/* ---------------------------
+TITLES
+--------------------------- */
+.title {
+  font-family: var(--primary-font);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h1.title {
+  font-size: 5.5em;
+  margin-bottom: 15px;
+}
+
+h2.title {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+
+h3.title {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+h4.title {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  h1.title {
+    font-size: 5.5em;
+  }
+
+  h2.title {
+    font-size: 2.4em !important;
+  }  
+
+  h3.title {
+    font-size: 1.4em !important;
+  }  
+
+  h4.title {
+    font-size: 1.2em !important;
+  }  
+}
+
+/* ---------------------------
+TEXTS
+--------------------------- */
+
+.subtitle {
+  font-family: var(--secondary-font);
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.simple-title {
+  font-family: var(--secondary-font);
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.text {
+  font-family: var(--secondary-font);
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 600px) {
+  p.subtitle, p.simple-title {
+    font-size: 1.2em !important;
+  }
+}
+
+
+/* ---------------------------
+CARDS
+--------------------------- */
+/*
+.card {
+  display: grid;
+  grid-auto-rows: auto;;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 0px 6px 30px -5px rgb(15, 15, 15);
+}
+
+@media screen and (max-width: 600px) {
+  .card-md {
+    padding: 20px !important;
+    width: 100% !important;
+  }
+
+  .card-sm {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+
+  .card-sm > .card-icon {
+    font-size: 2em !important;
+  }
+}
+
+.card-md {
+  width: 350px;
+  padding: 40px;
+  gap: 25px;
+}
+
+.card-sm {
+  width: 245px;
+  padding: 40px;
+  gap: 25px;
+}
+
+.card-md > .card-icon {
+  font-size: 5.5em;
+  
+}
+
+.card-sm > .card-icon {
+  font-size: 4.5em;
+}
+
+.card-md > .card-content {
+  display: grid;
+  gap: 30px;
+  padding: 25px 0px;
+}
+
+.card-content-item {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: auto 1fr;
+  align-items: center; 
+  font-size: 0.90em;
+}
+
+.card-md > .card-content > .card-content-item > i {
+  font-size: 12px;
+}
+
+.card-sm > .card-content > .card-content-item > i {
+  font-size: 12px;
+}
+*/
+
+/* ---------------------------
+INFO CARDS
+--------------------------- */
+.info-card {
+  display: grid;
+  grid-auto-rows: auto;;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 0px 6px 30px -5px rgb(15, 15, 15);
+}
+
+/* ---------------------------
+CHIPS
+--------------------------- */
+
+.chip {
+  display: inline-block;
+  /*border-radius: 100px;*/
+  padding: 5px 10px;
+  font-family: var(--secondary-font);
+  font-weight: bold; 
+  font-size: 0.9em;
+  text-transform: uppercase;
+  border-color: var(--primary-color);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.chip-empty {
+  color: var(--primary-color);
+  background-color: transparent;
+}
+
+.chip-full {
+  border-color: transparent;
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+
+/* ---------------------------
+BUTTONS
+--------------------------- */
+.btn {
+  transition: 0.1s ease;
+  padding: 15px 30px; 
+  font-family: var(--primary-font);
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 1em;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  font-size: 17px;
+  opacity: 0.65;
+}
+
+.btn-primary {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.btn-secondary {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.btn-accent {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+
+/* ---------------------------
+MISC
+--------------------------- */
+
+/* PHONE */
+
+.clip-diagonal-ltr-85 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+}
+
+.clip-diagonal-rtl-85 {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
+}
+
+@media (max-width:680px)  {
+  .clip-diagonal-ltr-85 {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 98%);
+  }
+
+  .clip-diagonal-rtl-85 {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 98%, 0% 100%);
+  }
+}
