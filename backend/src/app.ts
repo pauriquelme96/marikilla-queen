@@ -13,8 +13,9 @@ if (ENV_NAME === 'local') {
   app.set('trust proxy', true);
 }
 
-app.get('/hello', (req, res) => {
-  console.log('Hello data');
+app.get('/api', (req, res) => {
+  console.log('enter in /api');
+  res.send({ msg: 'Root' });
 });
 
 async function startup() {
@@ -30,5 +31,5 @@ app.listen(PORT, () => {
   console.log('ENV: ', ENV_NAME);
   console.log('PORT:', PORT);
   console.log('-------------------');
-  startup();
+  //startup();
 });
