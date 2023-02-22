@@ -2,7 +2,10 @@ import express from 'express';
 import compression from 'compression';
 import cors from 'cors';
 import { ENV_NAME, PORT } from './env';
-import { createUser, validateUser } from './entities/user/user';
+import { validateUser } from './entities/user/user';
+
+import { LoginResponse } from 'models/LoginResponse';
+import { Res } from 'models/Res';
 
 const app = express();
 app.use(compression());
@@ -16,6 +19,33 @@ if (ENV_NAME === 'local') {
 app.get('/api', (req, res) => {
   console.log('enter in /api');
   res.send({ msg: 'Root' });
+});
+
+app.post('/api/login', (req, res) => {
+  const payload: Res<LoginResponse> = {
+    ok: true,
+    message: {
+      token: {
+        status: 'valid',
+        msgs: [],
+      },
+      email: {
+        status: 'valid',
+        msgs: [],
+      },
+      name: {
+        status: 'valid',
+        msgs: [{ code: 0, content: 'asd' }],
+      },
+    },
+    payload: {
+      token: '897qeqjhr3mnr2',
+      email: 'pau@keteden.com',
+      name: 'Pau Riquelme',
+    },
+  };
+
+  res.send(payload);
 });
 
 async function startup() {

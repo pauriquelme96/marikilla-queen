@@ -5,7 +5,11 @@
     "target": "es2021",
     "moduleResolution": "node",
     "sourceMap": false,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "models/*": ["../models/*"]
+    }
   },
   "lib": ["es2015"]
 }
