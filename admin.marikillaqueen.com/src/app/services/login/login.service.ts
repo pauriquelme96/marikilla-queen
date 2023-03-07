@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
-import { Res } from 'models/Res';
-import { LoginResponse } from 'models/LoginResponse';
+import { Res } from '../shared/models/Res';
+import { LoginResponse } from '../shared/models/LoginResponse';
 
 @Injectable({
   providedIn: 'root',

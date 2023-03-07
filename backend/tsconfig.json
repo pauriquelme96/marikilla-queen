@@ -8,7 +8,7 @@
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
-      "models/*": ["../models/*"]
+      "models/*": ["../shared/models/*"]
     }
   },
   "lib": ["es2015"]

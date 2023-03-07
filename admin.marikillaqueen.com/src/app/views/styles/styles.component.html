@@ -1,0 +1,50 @@
+<!-- TITLES -->
+<div>
+  <h1 class="ttl">H1 Title</h1>
+  <h2 class="ttl">H2 Title</h2>
+  <h3 class="ttl">H3 Title</h3>
+  <h4 class="ttl">H4 Title</h4>
+  <h5 class="ttl">H5 Title</h5>
+
+  <h3 class="ttl ttl-primary">Primary Title</h3>
+  <h3 class="ttl ttl-secondary">Secondary Title</h3>
+  <h3 class="ttl ttl-accent">Accent Title</h3>
+  <h3 class="ttl ttl-accent-text ttl-primary-shadow">Custom Title</h3>
+</div>
+
+<div>
+  <button
+    *ngFor="let btn of buttons"
+    [ngClass]="btn.class"
+    style="margin-right: 5px"
+  >
+    {{ btn.content }}
+  </button>
+</div>
+
+<div style="margin: 15px">
+  <button class="btn btn-accent btn-lg" style="margin-right: 15px">
+    Large
+  </button>
+  <button class="btn btn-accent" style="margin-right: 15px">Normal</button>
+  <button class="btn btn-accent btn-sm" style="margin-right: 15px">
+    Small
+  </button>
+</div>
+
+<div style="background-color: rgb(41, 41, 41)">
+  <div style="padding: 25px">
+    <input class="inp" type="text" />
+  </div>
+</div>
+
+<div style="display: flex">
+  <ng-container *ngFor="let m of margin">
+    <div style="border: 2px solid red">
+      <div
+        [ngClass]="m"
+        style="height: 40px; width: 40px; background-color: blue"
+      ></div>
+    </div>
+  </ng-container>
+</div>

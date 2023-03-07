@@ -1,0 +1,107 @@
+// SIZING
+$size-factor: 3px;
+$size-mlt: 1.25;
+$sizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12; 
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.uppr {
+  text-transform: uppercase;
+}
+
+.lwr {
+  text-transform: lowercase;
+}
+
+.cptlz {
+  text-transform: capitalize;
+}
+
+.undrl {
+  text-decoration: underline;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%; 
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.no-select > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+
+// ------------------------
+// MARGINS
+// ------------------------
+$directions:
+  "t" "-top",
+  "l" "-left",
+  "r" "-right",
+  "b" "-bottom",
+  "" "";
+
+@each $dir, $rule in $directions {
+  @each $size in $sizes {
+    .m#{$dir}-#{$size} {
+      margin#{$rule}: #{$size * ($size-factor + ($size * $size-mlt))};
+    }
+  }
+} 
+
+@each $size in $sizes {
+  .mx-#{$size} {
+    margin: 0px #{$size * ($size-factor + $size)};
+  }
+
+  .my-#{$size} {
+    margin: #{$size * ($size-factor + $size)} 0px;
+  }
+}
+
+// ------------------------
+// PADDINGS
+// ------------------------
+@each $dir, $rule in $directions {
+  @each $size in $sizes {
+    .p#{$dir}-#{$size} {
+      padding#{$rule}: #{$size * ($size-factor + $size)};
+    }
+  }
+} 
+
+@each $size in $sizes {
+  .px-#{$size} {
+    padding: 0px #{$size * ($size-factor + $size)};
+  }
+
+  .py-#{$size} {
+    padding: #{$size * ($size-factor + $size)} 0px;
+  }
+}

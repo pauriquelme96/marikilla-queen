@@ -1,0 +1,21 @@
+
+$color-lib:
+  "-primary" $primary-color,
+  "-secondary" $secondary-color,
+  "-accent" $accent-color,
+  "-success" $success-color,
+  "-danger" $danger-color,
+  "-warning" $warning-color,
+  "-info" $info-color,
+  "-light" $light-color,
+  "-dark" $dark-color;
+
+
+@each $className, $color in $color-lib {
+  .c#{$className} {
+    color: $color;
+  }
+  .bg#{$className} {
+    background-color: $color;
+  }
+} 

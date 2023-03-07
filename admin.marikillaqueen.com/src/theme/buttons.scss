@@ -1,0 +1,59 @@
+// *********************************
+// BUTTONS
+// *********************************
+
+// ------------------------
+// DEFAULT CONF
+// ------------------------
+$btn-types: 
+  // CLASS NAME | BACKGROUND COLOR | TEXT COLOR | BUTTON SHADOW COLOR | TEXT SHADOW
+  "btn-primary" $primary-color $secondary-color $accent-color $accent-color,
+  "btn-secondary" $secondary-color $light-color $accent-color $dark-color,
+  "btn-accent" $accent-color $light-color $secondary-color $dark-color,
+  "btn-success" $success-color $light-color $secondary-color $dark-color,
+  "btn-danger" $danger-color $light-color $secondary-color $dark-color,
+  "btn-warning" $warning-color $light-color $secondary-color $dark-color,
+  "btn-light" $light-color $dark-color $secondary-color $light-color,
+  "btn-info" $info-color $light-color $secondary-color $dark-color;;
+
+.btn {
+  transition: 0.1s ease;
+  padding: 7px 13px;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+.btn:active {
+  box-shadow: 0px 0px 0px 0px white;
+  transform: translate(2px, 1px);
+}
+
+
+@each $className, $bg-color, $text-color, $button-shadow-color, $text-shadow-color in $btn-types {
+  .#{$className} {
+    background-color: $bg-color;
+    color: #{$text-color};
+    box-shadow: 2px 1px 0px 0px #{$button-shadow-color};
+    text-shadow: 2px 0px 0px #{$text-shadow-color};
+  }
+}
+
+$btn-sizes:
+  "btn-lg" 1.2em 7px 15px,
+  "btn-sm" 0.8em 4px 9px;
+
+@each $className, $fontSize, $pX, $pY in $btn-sizes {
+  .#{$className} {
+    padding: #{$pX} #{$pY};
+    font-size: #{$fontSize};
+  }
+}
+  

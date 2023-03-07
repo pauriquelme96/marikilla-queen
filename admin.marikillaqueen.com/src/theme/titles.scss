@@ -1,0 +1,76 @@
+// *********************************
+// TITLES
+// *********************************
+$headers-conf: 
+  // TAG | SHADOW SIZE | FONT SIZE
+  h1 5px 4em,
+  h2 5px 3em,
+  h3 4px 2.5em,
+  h4 3px 2em,
+  h5 3px 1.75em;
+
+// ------------------------
+// DEFAULT CONF
+// ------------------------
+.ttl {
+  font-weight: 900;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+@each $tag, $shadow-size, $font-size in $headers-conf {
+  #{$tag}.ttl {
+    font-size: #{$font-size};
+    letter-spacing: #{$shadow-size - 1px};
+  }
+}
+
+// ------------------------
+// STANDARD TITLES
+// ------------------------
+$standard-titles: 
+  // CLASS NAME | TEXT COLOR | SHADOW COLOR
+  "ttl-primary" $primary-color $accent-color,
+  "ttl-secondary" $secondary-color $accent-color,
+  "ttl-accent" $accent-color $secondary-color;
+  
+@each $className, $text-color, $shadow-color in $standard-titles {
+  @each $tag, $shadow-size in $headers-conf {
+    #{$tag}.#{$className} {
+      color: #{$text-color};
+      text-shadow: #{$shadow-size} 0px 0px $shadow-color;
+    }
+  }
+}
+
+// ------------------------
+// SHADOW COLOR
+// ------------------------
+$header-shadow-colors:
+  // CLASS NAME | SHADOW COLOR
+  "ttl-primary-shadow" $primary-color,
+  "ttl-secondary-shadow" $secondary-color,
+  "ttl-accent-shadow" $accent-color;
+
+@each $className, $shadow-color in $header-shadow-colors {
+  @each $tag, $shadow-size in $headers-conf {
+    #{$tag}.#{$className} {
+      text-shadow: #{$shadow-size} 0px 0px $shadow-color;
+    }
+  }
+} 
+
+// ------------------------
+// TEXT COLOR
+// ------------------------
+$header-text-colors:
+  // CLASS NAME | TEXT COLOR
+  "ttl-primary-text" $primary-color,
+  "ttl-secondary-text" $secondary-color,
+  "ttl-accent-text" $accent-color;
+
+@each $className, $text-color in $header-text-colors {
+  .#{$className} {
+    color: #{$text-color}
+  }
+} 
